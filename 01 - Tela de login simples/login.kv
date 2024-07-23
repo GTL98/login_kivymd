@@ -1,0 +1,37 @@
+MDFloatLayout:
+    MDLabel:  # label que escreve "Login"
+        text: 'Login'
+        pos_hint: {'center_y': 0.85}
+        font_style: 'H3'
+        halign: 'center'
+        theme_text_color: 'Custom'
+        text_color: 0, 0, 0, 1
+
+    MDLabel:  # label que escreve "Bem-vindo!"
+        text: 'Bem-vindo!'
+        pos_hint:{'center_y': 0.75}
+        font_style: 'H5'
+        halign: 'center'
+        theme_text_color: 'Custom'
+        text_color: 0, 0, 0, 1
+
+    MDTextField:  # campo para escrever o e-mail
+        id: email
+        hint_text: 'Digite o seu e-mail'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: 0.8
+
+    MDTextField:  # campo para escrever a senha
+        id: senha
+        hint_text: 'Senha'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.45}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: 0.8
+        password: True
+
+    MDRaisedButton:  # botão para efetuar o login
+        text: 'Login'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.25}
+        size_hint_x: 0.5
+        on_release: app.verificacao(email.text, senha.text)
